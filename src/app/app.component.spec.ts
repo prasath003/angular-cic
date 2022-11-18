@@ -25,4 +25,12 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('IBM');
   });
+
+  it(`should have false when theme is clicked'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.changeTheme();
+    //TODO: Onclick of button spy on element and check have been called
+    expect(typeof app.changeTheme()).toEqual('boolean')
+  });
 });

@@ -14,8 +14,4 @@ export class DataIntentService {
   newEvent(event : boolean){
     this.isThemeSubject.next(event);
   }
-
-  get event$(){
-    return this.isThemeSubject.asObservable();
-  }
 }

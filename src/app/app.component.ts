@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
   changeTheme(){
     this.customTheme = !this.customTheme;
     this.dataIntentService.newEvent(this.customTheme)
+    return this.customTheme;
   }
 
   ngOnInit(): void {

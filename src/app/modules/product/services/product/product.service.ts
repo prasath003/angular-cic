@@ -14,7 +14,7 @@ export class ProductService {
   }
 
   public getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(`${environment.baseUrl}${pathWithUrl?.coffee}?size=50`);
+    return this.http.get<IProduct[]>(`${environment.baseUrl}${pathWithUrl.coffee}?size=50`);
   }
 
 }

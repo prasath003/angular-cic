@@ -18,6 +18,7 @@ import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {BrowserModule} from "@angular/platform-browser";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,6 @@ import {BrowserModule} from "@angular/platform-browser";
   ],
   imports: [
     CommonModule,
-    BrowserModule,
     StoreModule.forFeature('products', reducer),
     EffectsModule.forFeature([ProductEffects]),
     ProductRoutingModule,
