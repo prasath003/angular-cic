@@ -1,7 +1,5 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataIntentService} from "./modules/shared/services/data-intent.service";
-import {FormControl} from "@angular/forms";
-import {OverlayContainer} from "@angular/cdk/overlay";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +10,7 @@ export class AppComponent implements OnInit{
   title = 'IBM';
   customTheme : boolean = true;
 
-  constructor(public dataIntentService: DataIntentService,private overlay: OverlayContainer) {
+  constructor(public dataIntentService: DataIntentService) {
   }
 
   changeTheme(){

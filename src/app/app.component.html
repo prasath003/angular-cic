@@ -3,10 +3,10 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>Product</span>
-      <span class="example-spacer"></span>
+      <span class="container-spacer"></span>
       <button mat-icon-button (click)="changeTheme()" class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon *ngIf="customTheme" aria-label="Example user verified icon">invert_colors</mat-icon>
-        <mat-icon *ngIf="!customTheme" aria-label="Example user verified icon">invert_colors_off</mat-icon>
+        <mat-icon *ngIf="customTheme" aria-label="White Theme">invert_colors</mat-icon>
+        <mat-icon *ngIf="!customTheme" aria-label="Dark Theme">invert_colors_off</mat-icon>
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
@@ -21,5 +21,9 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+</div>
+
+<div class="footer" #footer>
+  Prasath Muthaian
 </div>
 

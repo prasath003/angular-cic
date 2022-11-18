@@ -16,3 +16,17 @@ table {
   cursor: pointer;
 }
 
+.search-bar-group {
+  background: whitesmoke;
+  transition: all .5s ease;
+}
+
+.search-bar-group:focus-within {
+  background: white;
+  box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.input-search {
+  height: 32px;
+}
+
