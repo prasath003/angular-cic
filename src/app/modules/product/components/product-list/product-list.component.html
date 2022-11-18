@@ -1,0 +1,44 @@
+<ng-container>
+<div class="row">
+  <div class="col-md-2 col-lg-2"></div>
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>S.No</mat-header-cell>
+        <mat-cell *matCellDef="let index = index"> {{index + 1}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="blend_name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Blend Name</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.blend_name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="origin">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Origin</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.origin}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="variety">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Variety</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.variety}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="notes">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Notes</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <i class="bi bi-info-circle" matTooltip="{{element.notes}}"></i></mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="intensifier">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Intensifier</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.intensifier}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row matRipple class="cursor-row" *matRowDef="let row; columns: displayedColumns;" (click)="selectedProduct(row)"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  <div class="col-md-2 col-lg-2"></div>
+</div>
+</ng-container>
