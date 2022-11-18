@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'node_modules/@angular/material' as mat;
+
+@import "node_modules/@angular/material/theming";
+
+@include mat.core();
+
+$Ibm-primary : mat.define-palette(mat.$deep-purple-palette);
+$Ibm-accent:  mat.define-palette(mat.$indigo-palette, A200, A100, A400);
+$Ibm-warn:  mat.define-palette(mat.$red-palette);
+
+$angular-dark-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $Ibm-primary,
+        accent: $Ibm-accent,
+        warn: $Ibm-warn,
+      ),
+    )
+);
+
+@function my-mat-light-theme-foreground($color) {
+  @return (
+    base:              $color,
+    divider:           $white-12-opacity,
+    dividers:          $white-12-opacity,
+    disabled:          rgba($color, 0.38),
+    disabled-button:   rgba($color, 0.38),
+    disabled-text:     rgba($color, 0.38),
+    hint-text:         rgba($color, 0.38),
+    secondary-text:    rgba($color, 0.54),
+    icon:              rgba($color, 0.54),
+    icons:             rgba($color, 0.54),
+    text:              rgba($color, 0.87),
+    slider-off:        rgba($color, 0.26),
+    slider-off-active: rgba($color, 0.38),
+    slider-min:        rgba($color, 0.38)
+  );
+};
+
+.darkMode {
+  $white-foreground: my-mat-light-theme-foreground(white);
+  $Ibm-dark-theme-custom: map-merge($angular-dark-theme, (foreground: $white-foreground));
+  @include angular-material-theme($Ibm-dark-theme-custom);
+}
